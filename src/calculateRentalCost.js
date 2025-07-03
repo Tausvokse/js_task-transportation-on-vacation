@@ -6,15 +6,18 @@
 function calculateRentalCost(days) {
   const dayCost = 40;
 
-  switch (true) {
-    case days > 0 && days < 3:
-      return days * dayCost;
-    case days >= 3 && days < 7:
-      return days * dayCost - 20;
-    case days >= 7:
-      return days * dayCost - 50;
-    default:
-      return 0;
+  if (days > 0 && days < 3) {
+    return days * dayCost;
+  }
+
+  if (days >= 3 && days < 7) {
+    return days * dayCost - 20;
+  }
+
+  if (days >= 7) {
+    return days * dayCost - 50;
+  } else {
+    return 0;
   }
 }
 
